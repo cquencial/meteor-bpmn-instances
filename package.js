@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'jkuester:bpmn-instances',
-  version: '0.0.1',
+  name: 'cquencial:bpmn-instances',
+  version: '0.1.0',
   // Brief, one-line summary of the package.
-  summary: 'Keep track of running Bpmn instances from jkuester:bpmn-engine',
+  summary: 'Keep track of running Bpmn instances from cquencial:bpmn-engine',
   // URL to the Git repository containing the source code for this package.
   git: '',
   // By default, Meteor will default to using README.md for documentation.
@@ -11,9 +11,9 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.6.1');
+  api.versionsFrom('1.6');
   api.use(['ecmascript', 'check', 'mongo']);
-  api.use('jkuester:bpmn-engine');
+  api.use('cquencial:bpmn-engine@0.1.0');
   api.addFiles('bpmn-instances.js');
 });
 
@@ -23,7 +23,7 @@ Package.onTest(function (api) {
   api.use('check');
   api.use('mongo');
   api.use('random');
-  api.use('jkuester:bpmn-instances');
+  api.use('cquencial:bpmn-instances');
   api.use('meteortesting:mocha');
   api.use('practicalmeteor:chai');
   api.mainModule('bpmn-instances-tests.js');
