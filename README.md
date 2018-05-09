@@ -67,6 +67,15 @@ Returns the size of the cache object / the number of cached process instances.
 Returns true if an instance is cached by the given `instanceId` and if the collection has a document with that id.
 Otherwise returns false.
 
+##### Bpmn.instances.add({ instanceId, engine })
+
+Adds an existing engine (process instance) to the collection and cache by a given `instanceId`.
+Usually it is the `engine.instanceId` property but this way it allows you to alternatively use custom ids (like uuid).
+
+##### Bpmn.instances.remove({ instanceId })
+
+Removes an engine from collection / cache by given `instanceId`
+
 ### Collection
 
 The extension ships with a Mongo.Collection and a caching dictionary by default.
