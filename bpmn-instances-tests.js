@@ -49,6 +49,7 @@ let instancesAtStart;
 let instancesCachedAtStart;
 
 Meteor.startup(() => {
+  console.log("test startzp")
   instancesAtStart = Bpmn.instances.collection.find().count();
   instancesCachedAtStart = Bpmn.instances.size();
 });
@@ -68,27 +69,6 @@ describe('bpmn-instances', function () {
     Bpmn.instances.off();
   });
 
-
-  describe('Bpmn.instances.collection', function () {
-    it('is empty after startup', function () {
-      assert.equal(instancesAtStart, 0);
-    });
-
-    it ('has a name', function () {
-      isDefined(Bpmn.instances.collection.name, 'string');
-    });
-
-    it('has an optional schema definition', function () {
-      isDefined(Bpmn.instances.collection.schema, 'object');
-    });
-  });
-
-  describe('Bpmn.instances cache', function () {
-
-    it('is empty after startup', function () {
-      assert.equal(instancesCachedAtStart, 0);
-    });
-  });
 
   describe("Bpmn.instances.has", function () {
 
@@ -269,6 +249,27 @@ describe('bpmn-instances', function () {
       engine.execute({
         listener
       });
+    });
+  });
+
+  describe('Bpmn.instances.collection', function () {
+    it('is empty after startup', function () {
+      assert.equal(instancesAtStart, 0);
+    });
+
+    it ('has a name', function () {
+      isDefined(Bpmn.instances.collection.name, 'string');
+    });
+
+    it('has an optional schema definition', function () {
+      isDefined(Bpmn.instances.collection.schema, 'object');
+    });
+  });
+
+  describe('Bpmn.instances cache', function () {
+
+    it('is empty after startup', function () {
+      assert.equal(instancesCachedAtStart, 0);
     });
   });
 });
