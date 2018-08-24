@@ -25,8 +25,13 @@ BpmnEngineInstances.schema = BpmnEngineInstancesSchema;
 // wipe collection
 // at startup
 Meteor.startup(() => {
+  console.log("startzp")
   if (Meteor.isServer) {
-    BpmnEngineInstances.remove({});
+    const allInstances = BpmnEngineInstances.find({}).fetch()
+    BpmnEngineInstances.remove({})
+    allInstances.map(entry => entry.instanceId).forEach(instanceId => {
+      Bpmn.processes.collection.update({instanceId}, {$set: {state: Bpmn.States.stopped}})
+    })
   }
 });
 
