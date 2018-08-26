@@ -226,7 +226,7 @@ describe('bpmn-instances', function () {
           hooks: {
             'instances': {
               onResumeAfter: Meteor.bindEnvironment(function () {
-                Meteor._sleepForMs(100)
+                Meteor._sleepForMs(350)
                 assert.isTrue(Bpmn.instances.has(instanceId))
                 done()
               })
