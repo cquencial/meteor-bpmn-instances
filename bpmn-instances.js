@@ -147,3 +147,4 @@ instances.off = function off () {
 // //////////////////////////////////////////////////////////////////////////////////////
 
 Bpmn.instances = instances
+Bpmn.extensions.add(instances.ns, instances, true)

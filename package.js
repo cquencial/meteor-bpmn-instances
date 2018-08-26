@@ -1,6 +1,6 @@
 Package.describe({
   name: 'cquencial:bpmn-instances',
-  version: '0.1.1',
+  version: '0.1.2',
   // Brief, one-line summary of the package.
   summary: 'Keep track of running Bpmn instances from cquencial:bpmn-engine',
   // URL to the Git repository containing the source code for this package.
