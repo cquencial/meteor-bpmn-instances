@@ -41,10 +41,10 @@ Meteor.startup(() => {
 
 const _cache = {}
 
-const instances = {
-  name: 'extensions:instances',
-}
-
+const instances = {}
+instances.ns = 'extensions.instances'
+instances.name = 'Instances'
+instances.description = 'Manages running in-memory process instances.'
 instances.collection = BpmnEngineInstances
 
 instances.get = function get (instanceId) {
@@ -133,11 +133,11 @@ instanceHooks.onResumeAfter = Meteor.bindEnvironment(function (engineFct) {
 instances.hooks = instanceHooks
 
 instances.on = function on () {
-  Bpmn.hooks.add(instances.name, instanceHooks)
+  Bpmn.hooks.add(instances.ns, instanceHooks)
 }
 
 instances.off = function off () {
-  Bpmn.hooks.remove(instances.name)
+  Bpmn.hooks.remove(instances.ns)
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////
