@@ -1,6 +1,6 @@
 Package.describe({
   name: 'cquencial:bpmn-instances',
-  version: '0.1.2',
+  version: '0.1.3',
   // Brief, one-line summary of the package.
   summary: 'Keep track of running Bpmn instances from cquencial:bpmn-engine',
   // URL to the Git repository containing the source code for this package.
@@ -13,7 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.6');
   api.use(['ecmascript', 'check', 'mongo']);
-  api.use('cquencial:bpmn-engine@0.1.0');
+  api.use('cquencial:bpmn-engine@0.2.0');
   api.addFiles('bpmn-instances.js');
 });
 
