@@ -46,6 +46,7 @@ instances.ns = 'extensions.instances'
 instances.name = 'Instances'
 instances.description = 'Manages running in-memory process instances.'
 instances.collection = BpmnEngineInstances
+instances.methods = {}
 
 instances.get = function get (instanceId) {
   check(instanceId, Match.Where(isString))
